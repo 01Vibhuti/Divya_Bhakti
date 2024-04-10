@@ -1,0 +1,90 @@
+name: divya_bhakti
+description: A new Flutter project.
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+  #for native splash screen
+  flutter_native_splash: ^2.3.2
+
+  #for state , route , dependency management
+  get: ^4.6.6
+
+  #for audiofiles
+
+#  just_audio: ^0.9.35
+#  audioplayers_android: ^5.0.0
+#  audioplayers: ^6.0.0
+
+
+
+  #firebase packages
+  firebase_core: ^2.15.1
+  firebase_storage: ^11.2.6
+  cloud_firestore: ^4.8.5
+
+  #for icons
+  font_awesome_flutter: ^10.5.0
+
+  #for taking formated data
+  intl: ^0.18.1
+
+  #for page turn animation
+  page_flip: ^0.1.0
+
+  
+
+flutter_native_splash:
+  background_image: "assets/images/Splash Screen.png"
+# native splash screen file
+# flutter_native_splash:
+#   color: "#ffffff"
+#   image: "assets/images/divya-bhakti-logo-[Recovered] (1) 1.png"
+#   background_image: "assets/images/Rectangle 3.png"
+#   background_image_dark: "assets/images/Rectangle 3.png"
+#   image_dark: "assets/images/divya-bhakti-logo-[Recovered] (1) 1.png"
+#   android_12:
+#     image: "assets/images/divya-bhakti-logo-[Recovered] (1) 1.png"
+#     background_image: "assets/images/Rectangle 3.png"
+#   android: true
+#   ios: true
+  
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+ 
+  flutter_lints: ^2.0.0
+
+
+flutter:
+
+
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/images/
+    - assets/audio/
+    
+  #   - images/a_dot_ham.jpeg
+  fonts:
+    - family: Imprima
+      fonts:
+        - asset: assets/fonts/Imprima-Regular.ttf
+    
+  

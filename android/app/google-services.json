@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "344626244618",
+    "project_id": "divya-bhakti",
+    "storage_bucket": "divya-bhakti.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344626244618:android:d4d250ef8d60d95abb83f3",
+        "android_client_info": {
+          "package_name": "com.example.divya_bhakti"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbqjtD5e3eob7Juo47mKYmLI5iVc0AbnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
