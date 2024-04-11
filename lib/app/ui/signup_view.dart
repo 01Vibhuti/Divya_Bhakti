@@ -81,7 +81,7 @@ class _signup_viewState extends State<signup_view> {
                       height: Get.height * 0.13,
                       child: Image(
                         image: AssetImage(
-                          'assets/images/mata.png',
+                          'assets/images/divya-bhakti-logo-[Recovered] (1) 1.png',
                         ),
                         fit: BoxFit.fill,
                       ),
@@ -114,12 +114,13 @@ class _signup_viewState extends State<signup_view> {
                     Column(
                       children: [
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             InkWell(
                               onTap: () {},
                               child: Container(
-                                margin: EdgeInsets.all(5),
+                                // alignment: Alignment.center,
+                                margin: EdgeInsets.all(10),
                                 padding: EdgeInsets.symmetric(
                                   horizontal: 15,
                                   vertical: 10,
@@ -141,7 +142,7 @@ class _signup_viewState extends State<signup_view> {
                                 child: Text(
                                   'Sign up',
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: Colors.white,fontSize: 20
                                   ),
                                 ),
                               ),

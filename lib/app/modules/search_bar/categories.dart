@@ -16,18 +16,26 @@ class _CategoriesState extends State<Categories> {
       children: [
         CircleAvatar(
           radius: 40,
-          backgroundColor: Colors.white60,
-           backgroundImage: AssetImage(widget.back),
-          //       AssetImage(
-    //   'assets/images/background 2.png',
-    // ),
+          backgroundColor: Colors.transparent, // Set background color to transparent
+          backgroundImage: AssetImage(widget.back),
+          // backgroundImage: AssetImage('assets/images/background 2.png'),
+          // You can remove the above line if you're using `widget.back`
+          // Replace `Colors.red` with your desired border color
+          // You can also adjust the borderWidth as needed
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: Color(0xffFFD704), width: 2.0),
+            ),
+          ),
         ),
+
         SizedBox(
           height: 10,
         ),
         Text(
           widget.text,
-          style: TextStyle(color: Colors.white, fontSize: 15),
+          style: TextStyle(color: Color(0xffFFD704), fontSize: 18),
         )
       ],
     );

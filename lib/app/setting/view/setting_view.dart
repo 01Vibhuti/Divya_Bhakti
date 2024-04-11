@@ -22,154 +22,156 @@ class SettingView extends StatelessWidget {
             ),
             fit: BoxFit.fill),
       ),
-      child: Scaffold(
-        // bottomNavigationBar: CustomBottomNavigationBar(),
-        backgroundColor: Colors.transparent,
-        body: Opacity(
-          opacity: 0.8,
-          child: Container(
-            height: Get.height,
-            width: Get.width,
-            // margin: EdgeInsets.all(20),
-            decoration: const BoxDecoration(
-              // color: Colors.red,
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color.fromRGBO(251, 14, 2, 1),
-                  Color(0xffC7451B),
-                ],
-              ),
-            ),
-            child: SingleChildScrollView(
-              child: SafeArea(
-                child:
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  // mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // Row(
-                    //   children: [
-                    //     Text(
-                    //       formattedDate,
-                    //       style: const TextStyle(
-                    //         color: appcolor.yellowColor,
-                    //       ),
-                    //     ),
-                    //     Spacer(),
-                    //     IconButton(
-                    //       onPressed: () {},
-                    //       icon: const Icon(
-                    //         Icons.notifications,
-                    //         size: 20,
-                    //         color: appcolor.yellowColor,
-                    //       ),
-                    //     ),
-                    //     IconButton(
-                    //       onPressed: () {},
-                    //       icon: const Icon(
-                    //         Icons.settings,
-                    //         size: 20,
-                    //         color: appcolor.yellowColor,
-                    //       ),
-                    //     ),
-                    //   ],
-                    // ),
-                    Container(
-                      child: const Text(
-                        'Settings',
-                        style: TextStyle(
-                            color: appcolor.yellowColor,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700),
-                      ),
-                    ),
-                    SizedBox(
-                      height: Get.height * 0.008,
-                    ),
-                    headingContainer('Account'),
-                    SizedBox(
-                      height: Get.height * 0.005,
-                    ),
-                    ItemWidget('Edit Profile', Icons.edit),
-                    const Divider(
-                        color: appcolor.yellowColor, thickness: 1, height: 0),
-                    ItemWidget('Change Password', Icons.lock),
-                    SizedBox(
-                      height: Get.height * 0.008,
-                    ),
-                    headingContainer('Connected Accounts'),
-                    SizedBox(
-                      height: Get.height * 0.005,
-                    ),
-                    ItemWidget(
-                      ' Facebook',
-                      FontAwesomeIcons.facebook,
-                    ),
-                    const Divider(
-                        color: appcolor.yellowColor, thickness: 1, height: 0),
-                    ItemWidget(
-                      ' Google',
-                      FontAwesomeIcons.google,
-                    ),
-                    SizedBox(
-                      height: Get.height * 0.008,
-                    ),
-                    headingContainer('App Setting'),
-                    SizedBox(
-                      height: Get.height * 0.005,
-                    ),
-                    ItemWidget(
-                      ' Location',
-                      FontAwesomeIcons.locationArrow,
-                    ),
-                    const Divider(
-                        color: appcolor.yellowColor, thickness: 1, height: 0),
-                    ItemWidget(
-                      ' Notification',
-                      Icons.notifications,
-                    ),
-                    const Divider(
-                        color: appcolor.yellowColor, thickness: 1, height: 0),
-                    ItemWidget(
-                      ' Reminder 08:00 AM',
-                      Icons.alarm,
-                    ),
-                    SizedBox(
-                      height: Get.height * 0.03,
-                    ),
-                    ItemWidget(
-                      ' Invite Friends',
-                      Icons.people,
-                    ),
-                    const Divider(
-                        color: appcolor.yellowColor, thickness: 1, height: 0),
-                    ItemWidget(
-                      ' Rate Us',
-                      Icons.star,
-                    ),
-                    SizedBox(
-                      height: Get.height * 0.03,
-                    ),
-                    ItemWidget(
-                      ' Delete Account',
-                      Icons.delete,
-                    ),
-                    const Divider(
-                        color: appcolor.yellowColor, thickness: 1, height: 0),
-                    ItemWidget(
-                      ' Logout',
-                      Icons.logout,
-                    ),
-                    SizedBox(
-                      height: Get.height * 0.03,
-                    ),
-                    followUsOnContainer(),
+      child: SafeArea(
+        child: Scaffold(
+          // bottomNavigationBar: CustomBottomNavigationBar(),
+          backgroundColor: Colors.transparent,
+          body: Opacity(
+            opacity: 0.8,
+            child: Container(
+              height: Get.height,
+              width: Get.width,
+              // margin: EdgeInsets.all(20),
+              decoration: const BoxDecoration(
+                // color: Colors.red,
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromRGBO(251, 14, 2, 1),
+                    Color(0xffC7451B),
                   ],
-                ).paddingSymmetric(
-                  horizontal: 15,
+                ),
+              ),
+              child: SingleChildScrollView(
+                child: SafeArea(
+                  child:
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Row(
+                      //   children: [
+                      //     Text(
+                      //       formattedDate,
+                      //       style: const TextStyle(
+                      //         color: appcolor.yellowColor,
+                      //       ),
+                      //     ),
+                      //     Spacer(),
+                      //     IconButton(
+                      //       onPressed: () {},
+                      //       icon: const Icon(
+                      //         Icons.notifications,
+                      //         size: 20,
+                      //         color: appcolor.yellowColor,
+                      //       ),
+                      //     ),
+                      //     IconButton(
+                      //       onPressed: () {},
+                      //       icon: const Icon(
+                      //         Icons.settings,
+                      //         size: 20,
+                      //         color: appcolor.yellowColor,
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ),
+                      Container(
+                        child: const Text(
+                          'Settings',
+                          style: TextStyle(
+                              color: appcolor.yellowColor,
+                              fontSize: 28,
+                              fontWeight: FontWeight.w700),
+                        ),
+                      ),
+                      SizedBox(
+                        height: Get.height * 0.008,
+                      ),
+                      headingContainer('Account'),
+                      SizedBox(
+                        height: Get.height * 0.005,
+                      ),
+                      ItemWidget('Edit Profile', Icons.edit),
+                      const Divider(
+                          color: appcolor.yellowColor, thickness: 1, height: 0),
+                      ItemWidget('Change Password', Icons.lock),
+                      SizedBox(
+                        height: Get.height * 0.008,
+                      ),
+                      headingContainer('Connected Accounts'),
+                      SizedBox(
+                        height: Get.height * 0.005,
+                      ),
+                      ItemWidget(
+                        ' Facebook',
+                        FontAwesomeIcons.facebook,
+                      ),
+                      const Divider(
+                          color: appcolor.yellowColor, thickness: 1, height: 0),
+                      ItemWidget(
+                        ' Google',
+                        FontAwesomeIcons.google,
+                      ),
+                      SizedBox(
+                        height: Get.height * 0.008,
+                      ),
+                      headingContainer('App Setting'),
+                      SizedBox(
+                        height: Get.height * 0.005,
+                      ),
+                      ItemWidget(
+                        ' Location',
+                        FontAwesomeIcons.locationArrow,
+                      ),
+                      const Divider(
+                          color: appcolor.yellowColor, thickness: 1, height: 0),
+                      ItemWidget(
+                        ' Notification',
+                        Icons.notifications,
+                      ),
+                      const Divider(
+                          color: appcolor.yellowColor, thickness: 1, height: 0),
+                      ItemWidget(
+                        ' Reminder 08:00 AM',
+                        Icons.alarm,
+                      ),
+                      SizedBox(
+                        height: Get.height * 0.03,
+                      ),
+                      ItemWidget(
+                        ' Invite Friends',
+                        Icons.people,
+                      ),
+                      const Divider(
+                          color: appcolor.yellowColor, thickness: 1, height: 0),
+                      ItemWidget(
+                        ' Rate Us',
+                        Icons.star,
+                      ),
+                      SizedBox(
+                        height: Get.height * 0.03,
+                      ),
+                      ItemWidget(
+                        ' Delete Account',
+                        Icons.delete,
+                      ),
+                      const Divider(
+                          color: appcolor.yellowColor, thickness: 1, height: 0),
+                      ItemWidget(
+                        ' Logout',
+                        Icons.logout,
+                      ),
+                      SizedBox(
+                        height: Get.height * 0.03,
+                      ),
+                      followUsOnContainer(),
+                    ],
+                  ).paddingSymmetric(
+                    horizontal: 15,
+                  ),
                 ),
               ),
             ),
@@ -205,7 +207,7 @@ Widget ItemWidget(String title, IconData iconData) {
     margin: EdgeInsets.symmetric(vertical: 0),
     width: Get.width,
     decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5), color: Color(0xffFD0505)),
+        borderRadius: BorderRadius.circular(5), color: Color(0xffFD0505), ),
     child: Row(
       children: [
         Icon(
@@ -216,7 +218,7 @@ Widget ItemWidget(String title, IconData iconData) {
           title,
           style: TextStyle(
               color: appcolor.yellowColor,
-              fontSize: 15,
+              fontSize: 22,
               fontWeight: FontWeight.w500),
         ),
       ],

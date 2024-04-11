@@ -72,7 +72,7 @@ class login_view extends StatelessWidget {
                       height: Get.height * 0.13,
                       child: Image(
                         image: AssetImage(
-                          'assets/images/mata.png',
+                          'assets/images/divya-bhakti-logo-[Recovered] (1) 1.png',
                         ),
                         fit: BoxFit.fill,
                       ),
@@ -120,7 +120,7 @@ class login_view extends StatelessWidget {
                                 child: Text(
                                   'Login',
                                   style: TextStyle(
-                                    color: Colors.white,
+                                    color: Colors.white,fontSize: 20
                                   ),
                                 ),
                               ),

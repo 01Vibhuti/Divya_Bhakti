@@ -82,7 +82,7 @@ class starting_view extends StatelessWidget {
                         'Welcome To Divya Bhakti',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: Colors.white, fontSize: 34,),
+                            color: Colors.white, fontSize: 34,fontWeight: FontWeight.bold),
                       ),
                     ),
                     Container(
@@ -92,7 +92,7 @@ class starting_view extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 18,
+                          fontSize: 22,
                         ),
                       ),
                     ),
@@ -105,7 +105,7 @@ class starting_view extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 15,
+                          fontSize: 20,
                         ),
                       ),
                     ),
@@ -117,7 +117,7 @@ class starting_view extends StatelessWidget {
                       child: Text(
                         'Build A Positive Habit',
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 30,),
+                        style: TextStyle(color: Colors.white, fontSize: 32,fontWeight: FontWeight.bold),
                       ),
                     ),
                     Container(
@@ -139,7 +139,7 @@ class starting_view extends StatelessWidget {
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Colors.white,
-                          fontSize: 16,
+                          fontSize: 20,
                         ),
                       ),
                     ),
@@ -176,7 +176,7 @@ class starting_view extends StatelessWidget {
                             child: Text(
                               'Login',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.white,fontSize: 20,
                               ),
                             ),
                           ),
@@ -208,7 +208,7 @@ class starting_view extends StatelessWidget {
                             child: Text(
                               'Get Started',
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.white,fontSize: 20
                               ),
                             ),
                           ),

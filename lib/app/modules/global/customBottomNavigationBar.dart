@@ -34,7 +34,7 @@
 //               iconData: Icons.search,
 //             ),
 //             // ImageIcon(
-//             //   AssetImage( 'assets/images/divya-bhakti-logo-[Recovered] (1) 1.png'), // AssetImage is an ImageProvider
+//             //   AssetImage( 'assets/images/ivya-bhakti-logo-[Recovered] (1) 1.png'), // AssetImage is an ImageProvider
 //             //   // size: 100,
 //             //   // color: Colors.blue,
 //             // ),
@@ -99,6 +99,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
+import '../home/view/HomeView.dart';
+import '../japa count/view/count_jap_view.dart';
 import '../search_bar/search_bar.dart';
 
 Widget CustomBottomNavigationBar(context) {
@@ -126,6 +128,8 @@ Widget CustomBottomNavigationBar(context) {
               iconData: Icons.home,
               onPressed: () {
                 // Add functionality for Home icon here
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView()));
+
                 print('Home icon pressed');
               }, icondata_border: Icons.home,
             ),
@@ -148,9 +152,11 @@ Widget CustomBottomNavigationBar(context) {
             ),
             bottombarWidget(
               title: 'Community',
-              icondata_border: FontAwesomeIcons.globe,iconColor: Colors.yellowAccent,
-              // iconData: FontAwesomeIcons.earthAmericas,
+              icondata_border: FontAwesomeIcons.timeline,iconColor: Colors.yellowAccent,
+             // iconData: FontAwesomeIcons.groupArrowsRotate,
+              iconDataBorder: Icons.group_add,
               onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => CountJapView()));
                 // Add functionality for Home icon here
                 print('Home icon pressed');
               },
@@ -158,11 +164,12 @@ Widget CustomBottomNavigationBar(context) {
             bottombarWidget(
               title: 'History',
               iconDataBorder: Icons.history_outlined,
-              iconData: Icons.history,
+              iconData: Icons.history,iconColor: Colors.yellowAccent,
               onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => CountJapView()));
                 // Add functionality for Home icon here
                 print('Home icon pressed');
-              }, icondata_border: Icons.home,
+              }, icondata_border: Icons.history,
             ),
             // Add other icons here with their respective onPressed callbacks
           ],
@@ -188,18 +195,18 @@ Widget bottombarWidget({
             Icon(
               iconData,
               color: Colors.red,
-              size: 20,
+              size: 25,
             ),
             Icon(
               iconDataBorder,
               color: Colors.yellow,
-              size: 20,
+              size: 25,
             ),
           ],
         ),
         Text(
           '$title',
-          style: TextStyle(color: Colors.white, fontSize: 12),
+          style: TextStyle(color: Colors.white, fontSize: 16),
         )
       ],
     ),

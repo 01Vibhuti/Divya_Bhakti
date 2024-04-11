@@ -29,9 +29,9 @@ class Divya_Bhakti extends StatelessWidget {
         fontFamily: 'Imprima'
       ),
       debugShowCheckedModeBanner: false,
-      getPages: appPages.route,
-      home: Splash_Screen(),
 
+      home: Splash_Screen(),
+      getPages: appPages.route,
       initialRoute: Routes.JapaView,
       defaultTransition: Transition.rightToLeftWithFade,
       transitionDuration:Duration(seconds: 1),
