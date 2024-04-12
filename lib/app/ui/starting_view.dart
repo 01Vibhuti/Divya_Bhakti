@@ -1,9 +1,11 @@
 import 'package:divya_bhakti/app/Route/appRoute.dart';
+import 'package:divya_bhakti/app/ui/login_view.dart';
+import 'package:divya_bhakti/app/ui/signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class starting_view extends StatelessWidget {
-  const starting_view({super.key});
+class StartingView extends StatelessWidget {
+  const StartingView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -151,7 +153,8 @@ class starting_view extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            Get.toNamed(Routes.LOGIN_VIEW);
+                            //Get.toNamed(Routes.LOGIN_VIEW);
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView()));
                           },
                           child: Container(
                             margin: EdgeInsets.all(5),
@@ -183,7 +186,8 @@ class starting_view extends StatelessWidget {
                         ),
                         InkWell(
                           onTap: () {
-                            Get.toNamed(Routes.SIGNUP_VIEW);
+                            //Get.toNamed(Routes.SIGNUP_VIEW);
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => SignupView()));
                           },
                           child: Container(
                             margin: EdgeInsets.all(5),

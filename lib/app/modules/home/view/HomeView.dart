@@ -1,3 +1,5 @@
+import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
+import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:divya_bhakti/app/Route/appRoute.dart';
 import 'package:divya_bhakti/app/modules/Naam%20Jap/view/japa_view.dart';
 import 'package:divya_bhakti/app/modules/global/appcolor.dart';
@@ -11,9 +13,10 @@ import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:intl/intl.dart';
 
 import '../../../Route/customRoute.dart';
+import '../../search_bar/search_bar.dart';
 
 class HomeView extends StatelessWidget {
-  HomeView({super.key});
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +34,65 @@ class HomeView extends StatelessWidget {
               fit: BoxFit.fill),
         ),
         child: Scaffold(
-          bottomNavigationBar: CustomBottomNavigationBar(context),
+          bottomNavigationBar: //CustomBottomNavigationBar(context),
+          CurvedNavigationBar(
+             backgroundColor: Color(0xffFFD704),
+             //Color(0xffFD1105),
+            color: Color(0xffEB4117),
+            //backgroundColor: Color(0xffFD1105),color: Colors.black,
+            iconPadding: 10,
+            items: <CurvedNavigationBarItem> [
+              CurvedNavigationBarItem(label: 'Home',labelStyle: TextStyle(color: Color(0xffFFD704),fontSize: 18),
+                child:  IconButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>  HomeView()));
+                  }, icon: Icon(Icons.home),
+                  color: Color(0xffFFD704),
+
+                ),
+              ),
+              CurvedNavigationBarItem(label: 'Search',
+                labelStyle: TextStyle(color: Color(0xffFFD704),fontSize: 18),
+                child:  IconButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>  SearchIcon()));
+                  }, icon: Icon(Icons.search),
+                  color: Color(0xffFFD704),
+
+                ),
+              ),
+
+              CurvedNavigationBarItem(
+                child: Container(
+                  child: Image(
+                    image: AssetImage(
+                        'assets/images/divya-bhakti-logo-[Recovered] (1) 1.png'),
+                  ),
+                  height: 35,
+                ),
+              ),
+              CurvedNavigationBarItem(
+                label: 'Community',
+                labelStyle: TextStyle(color: Color(0xffFFD704),fontSize: 18),
+                child:  Icon(
+                  Icons.person_add_alt,
+                  color: Color(0xffFFD704),
+                  size: 25,
+                ),
+              ),
+              CurvedNavigationBarItem(
+                label: 'History',
+                labelStyle: TextStyle(color: Color(0xffFFD704),fontSize: 18),
+                child:  Icon(
+                  Icons.history,
+                  color: Color(0xffFFD704),
+                  size: 25,
+                ),
+              ),
+
+
+            ],
+          ),
           backgroundColor: Colors.transparent,
           body: Opacity(
             opacity: 0.8,
@@ -56,6 +117,7 @@ class HomeView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     // mainAxisSize: MainAxisSize.min,
                     children: [
+                      //Text('data',style: TextStyle(fontSize: 60),),
                       Row(
                         children: [
                           Text(
@@ -159,181 +221,223 @@ class HomeView extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Your Insights',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 22,
-                            ),
-                          ),
-                        ],
-                      ).paddingOnly(top: 15, bottom: 5, left: 10),
-                      Container(
+
+                Row(
+                  children: [
+                    Container(
                         height: Get.height * 0.13,
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            rowwidget(title: 'Japa Counts', count: '121'),
-                            rowwidget(title: 'Japa Counts', count: '121'),
-                            rowwidget(title: 'Japa Counts', count: '121'),
+                            Text('Aarti',style: TextStyle( fontSize: 22, color: Colors.white),),
+                            Container(child: Text('See all',style: TextStyle(fontSize:20,color: Colors.white ),)),
+
                           ],
                         ),
                       ),
-      
-                      blockButton(
-                          title: 'View Insights',
-                          fontsize: 22,
-                          backgroundColor: appcolor.redbutton,
-                          borderColor: appcolor.yellowColor,
-                          borderRadius: 15,
-                          // height: Get.height * 0.04,
-                          width: Get.width * 0.3,
-                          callback: (){
-                            Get.toNamed(Routes.CountJapTakeInputview);
-                          }
-                      ),
-      
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            'My Routines',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 22,
-                            ),
-                          ),
-                        ],
-                      ).paddingOnly(top: 5, bottom: 2, left: 10),
-                      Container(
-                        height: Get.height * 0.10,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                              height: Get.height * 0.08,
-                              width: Get.width * 0.4,
-                              decoration: BoxDecoration(
-                                color: appcolor.redlow,
-                                border: Border.all(
-                                  color: appcolor.yellowColor,
-                                ),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.calendar_month,
-                                    color: appcolor.yellowColor,
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  Text(
-                                    'Add Routine',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 22,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-      
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            'My Shortcuts',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 22,
-                            ),
-                          ),
-                        ],
-                      ).paddingOnly(top: 5, bottom: 10, left: 10),
-                      Container(
-                        height: Get.height * 0.14,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                              height: Get.height * 0.15,
-                              width: Get.width * 0.4,
-                              decoration: BoxDecoration(
-                                color: appcolor.redlow,
-                                border: Border.all(
-                                  color: appcolor.yellowColor,
-                                ),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  IconButton(
-                                    // FontAwesomeIcons.calendar,
-                                    color: appcolor.yellowColor, onPressed: () {
-                                      Navigator.push(context,
-                                          MaterialPageRoute(builder: (context) => JaapList()));
-                                  }, icon: Icon(Icons.calendar_month),
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    'Add Shortcuts',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 22,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(width:10 ,),
-                            Container(
-                              height: Get.height * 0.15,
-                              width: Get.width * 0.4,
-                              decoration: BoxDecoration(
-                                color: appcolor.redlow,
-                                border: Border.all(
-                                  color: appcolor.yellowColor,
-                                ),
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Icon(
-                                    Icons.calendar_month,
-                                    color: appcolor.yellowColor,
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    'Add Manual \nSession',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
+                  ],
+                ),
+
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.start,
+                      //   children: [
+                      //     ListTile(
+                      //       leading: Text('Aarti',style: TextStyle( fontSize: 22),),
+                      //      trailing: Container(child: Text('See all',style: TextStyle(fontSize:20 ),)),
+                      //     ),
+                      //     // Text(
+                      //     //   'Your Insights',
+                      //     //   style: TextStyle(
+                      //     //     color: Colors.white,
+                      //     //     fontSize: 22,
+                      //     //   ),
+                      //     // ),
+                      //   ],
+                      // ).paddingOnly(top: 15, bottom: 5, left: 10),
+                      // Container(
+                      //   height: Get.height * 0.13,
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //     children: [
+                      //     //   rowwidget(title: 'Japa Counts', count: '121'),
+                      //     //   rowwidget(title: 'Japa Counts', count: '121'),
+                      //     //   rowwidget(title: 'Japa Counts', count: '121'),
+                      //     ],
+                      //   ),
+                      // ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.start,
+                      //   children: [
+                      //     Text(
+                      //       'Your Insights',
+                      //       style: TextStyle(
+                      //         color: Colors.white,
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ).paddingOnly(top: 15, bottom: 5, left: 10),
+                      // Container(
+                      //   height: Get.height * 0.13,
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      //     children: [
+                      //       rowwidget(title: 'Japa Counts', count: '121'),
+                      //       rowwidget(title: 'Japa Counts', count: '121'),
+                      //       rowwidget(title: 'Japa Counts', count: '121'),
+                      //     ],
+                      //   ),
+                      // ),
+                      // blockButton(
+                      //     title: 'View Insights',
+                      //     fontsize: 22,
+                      //     backgroundColor: appcolor.redbutton,
+                      //     borderColor: appcolor.yellowColor,
+                      //     borderRadius: 15,
+                      //     // height: Get.height * 0.04,
+                      //     width: Get.width * 0.3,
+                      //     callback: (){
+                      //       Get.toNamed(Routes.CountJapTakeInputview);
+                      //     }
+                      // ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.start,
+                      //   children: [
+                      //     Text(
+                      //       'My Routines',
+                      //       style: TextStyle(
+                      //         color: Colors.white,
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ).paddingOnly(top: 5, bottom: 2, left: 10),
+                      // Container(
+                      //   height: Get.height * 0.10,
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.start,
+                      //     children: [
+                      //       Container(
+                      //         height: Get.height * 0.08,
+                      //         width: Get.width * 0.4,
+                      //         decoration: BoxDecoration(
+                      //           color: appcolor.redlow,
+                      //           border: Border.all(
+                      //             color: appcolor.yellowColor,
+                      //           ),
+                      //           borderRadius: BorderRadius.circular(20),
+                      //         ),
+                      //         child: Row(
+                      //           mainAxisAlignment: MainAxisAlignment.center,
+                      //           children: [
+                      //             Icon(
+                      //               Icons.calendar_month,
+                      //               color: appcolor.yellowColor,
+                      //             ),
+                      //             SizedBox(
+                      //               width: 10,
+                      //             ),
+                      //             Text(
+                      //               'Add Routine',
+                      //               style: TextStyle(
+                      //                 color: Colors.white,
+                      //                 fontSize: 22,
+                      //               ),
+                      //               textAlign: TextAlign.center,
+                      //             ),
+                      //           ],
+                      //         ),
+                      //       )
+                      //     ],
+                      //   ),
+                      // ),
+                      //
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.start,
+                      //   children: [
+                      //     Text(
+                      //       'My Shortcuts',
+                      //       style: TextStyle(
+                      //         color: Colors.white,
+                      //         fontSize: 22,
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ).paddingOnly(top: 5, bottom: 10, left: 10),
+                      // Container(
+                      //   height: Get.height * 0.14,
+                      //   child: Row(
+                      //     mainAxisAlignment: MainAxisAlignment.start,
+                      //     children: [
+                      //       Container(
+                      //         height: Get.height * 0.15,
+                      //         width: Get.width * 0.4,
+                      //         decoration: BoxDecoration(
+                      //           color: appcolor.redlow,
+                      //           border: Border.all(
+                      //             color: appcolor.yellowColor,
+                      //           ),
+                      //           borderRadius: BorderRadius.circular(20),
+                      //         ),
+                      //         child: Column(
+                      //           mainAxisAlignment: MainAxisAlignment.center,
+                      //           children: [
+                      //             IconButton(
+                      //               // FontAwesomeIcons.calendar,
+                      //               color: appcolor.yellowColor, onPressed: () {
+                      //                 Navigator.push(context,
+                      //                     MaterialPageRoute(builder: (context) => JaapList()));
+                      //             }, icon: Icon(Icons.calendar_month),
+                      //             ),
+                      //             SizedBox(
+                      //               height: 10,
+                      //             ),
+                      //             Text(
+                      //               'Add Shortcuts',
+                      //               style: TextStyle(
+                      //                 color: Colors.white,
+                      //                 fontSize: 22,
+                      //               ),
+                      //               textAlign: TextAlign.center,
+                      //             ),
+                      //           ],
+                      //         ),
+                      //       ),
+                      //       SizedBox(width:10 ,),
+                      //       Container(
+                      //         height: Get.height * 0.15,
+                      //         width: Get.width * 0.4,
+                      //         decoration: BoxDecoration(
+                      //           color: appcolor.redlow,
+                      //           border: Border.all(
+                      //             color: appcolor.yellowColor,
+                      //           ),
+                      //           borderRadius: BorderRadius.circular(20),
+                      //         ),
+                      //         child: Column(
+                      //           mainAxisAlignment: MainAxisAlignment.center,
+                      //           children: [
+                      //             Icon(
+                      //               Icons.calendar_month,
+                      //               color: appcolor.yellowColor,
+                      //             ),
+                      //             SizedBox(
+                      //               height: 10,
+                      //             ),
+                      //             Text(
+                      //               'Add Manual \nSession',
+                      //               style: TextStyle(
+                      //                 color: Colors.white,
+                      //                 fontSize: 20,
+                      //               ),
+                      //               textAlign: TextAlign.center,
+                      //             ),
+                      //           ],
+                      //         ),
+                      //       ),
+                      //     ],
+                      //   ),
+                      // )
                     ],
                   ).paddingSymmetric(
                     horizontal: 15,

@@ -1,9 +1,12 @@
+import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
+import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import '../../Route/customRoute.dart';
 import '../global/customBottomNavigationBar.dart';
+import '../home/view/HomeView.dart';
 import 'cards.dart';
 import 'categories.dart';
 import 'challenges.dart';
@@ -47,7 +50,65 @@ class _SearchIconState extends State<SearchIcon> {
       ),
       child: SafeArea(
         child: Scaffold(
-          bottomNavigationBar: CustomBottomNavigationBar(context),
+          bottomNavigationBar: //CustomBottomNavigationBar(context),
+          CurvedNavigationBar(
+            backgroundColor: Color(0xffFFD704),
+            //Color(0xffFD1105),
+            color: Color(0xffEB4117),
+            //backgroundColor: Color(0xffFD1105),color: Colors.black,
+            iconPadding: 10,
+            items: <CurvedNavigationBarItem> [
+              CurvedNavigationBarItem(label: 'Home',labelStyle: TextStyle(color: Color(0xffFFD704),fontSize: 18),
+                child:  IconButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>  HomeView()));
+                  }, icon: Icon(Icons.home),
+                  color: Color(0xffFFD704),
+
+                ),
+              ),
+              CurvedNavigationBarItem(label: 'Search',
+                labelStyle: TextStyle(color: Color(0xffFFD704),fontSize: 18),
+                child:  IconButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>  SearchIcon()));
+                  }, icon: Icon(Icons.search),
+                  color: Color(0xffFFD704),
+
+                ),
+              ),
+
+              CurvedNavigationBarItem(
+                child: Container(
+                  child: Image(
+                    image: AssetImage(
+                        'assets/images/divya-bhakti-logo-[Recovered] (1) 1.png'),
+                  ),
+                  height: 35,
+                ),
+              ),
+              CurvedNavigationBarItem(
+                label: 'Community',
+                labelStyle: TextStyle(color: Color(0xffFFD704),fontSize: 18),
+                child:  Icon(
+                  Icons.person_add_alt,
+                  color: Color(0xffFFD704),
+                  size: 25,
+                ),
+              ),
+              CurvedNavigationBarItem(
+                label: 'History',
+                labelStyle: TextStyle(color: Color(0xffFFD704),fontSize: 18),
+                child:  Icon(
+                  Icons.history,
+                  color: Color(0xffFFD704),
+                  size: 25,
+                ),
+              ),
+
+
+            ],
+          ),
           backgroundColor: Colors.transparent,
           body: Opacity(
             opacity: 0.8,

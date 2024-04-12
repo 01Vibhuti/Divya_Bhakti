@@ -1,16 +1,17 @@
 import 'package:divya_bhakti/app/Route/appRoute.dart';
+import 'package:divya_bhakti/app/ui/login_view.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class signup_view extends StatefulWidget {
-  signup_view({super.key});
+class SignupView extends StatefulWidget {
+  const SignupView({super.key});
 
   @override
-  State<signup_view> createState() => _signup_viewState();
+  State<SignupView> createState() => _SignupViewState();
 }
 
-class _signup_viewState extends State<signup_view> {
+class _SignupViewState extends State<SignupView> {
   TextEditingController _nameController = TextEditingController();
   TextEditingController _mobileController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
@@ -142,7 +143,7 @@ class _signup_viewState extends State<signup_view> {
                                 child: Text(
                                   'Sign up',
                                   style: TextStyle(
-                                    color: Colors.white,fontSize: 20
+                                    color: Colors.white,fontSize: 25
                                   ),
                                 ),
                               ),
@@ -208,7 +209,8 @@ class _signup_viewState extends State<signup_view> {
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    Get.offAllNamed(Routes.LOGIN_VIEW);
+                                    //Get.offAllNamed(Routes.LOGIN_VIEW);
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView()));
                                   },
                               ),
                             ]),
@@ -239,7 +241,7 @@ Widget textfield(
     child: TextFormField(
       keyboardType: keyboardType,
       style: TextStyle(
-        color: Colors.white,
+        color: Colors.white,fontSize: 20
       ),
       maxLength: keyLength,
       cursorColor: Colors.white,
@@ -259,7 +261,7 @@ Widget textfield(
         hintText: '${hintText}',
         icon: Icon(icon,color: Colors.white,),
         hintStyle: TextStyle(
-          color: Colors.white,
+          color: Colors.white,fontSize: 20
         ),
         // contentPadding: EdgeInsets.symmetric(
         //   horizontal: 0,

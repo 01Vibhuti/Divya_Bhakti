@@ -39,7 +39,7 @@ class _CountJapViewState extends State<CountJapView>
             fit: BoxFit.fill),
       ),
       child: Scaffold(
-        bottomNavigationBar: CustomBottomNavigationBar(context),
+        //bottomNavigationBar: CustomBottomNavigationBar(context),
         backgroundColor: Colors.transparent,
         body: Opacity(
           opacity: 0.8,

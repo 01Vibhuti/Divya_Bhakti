@@ -1,12 +1,14 @@
 import 'package:divya_bhakti/app/Route/appRoute.dart';
+import 'package:divya_bhakti/app/modules/home/view/HomeView.dart';
+import 'package:divya_bhakti/app/ui/signup_view.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 
-class login_view extends StatelessWidget {
-  login_view({super.key});
+class LoginView extends StatelessWidget {
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -78,11 +80,11 @@ class login_view extends StatelessWidget {
                       ),
                     ),
                     textfield(
-                      hintText: 'Email',
+                      hintText: 'Email',icon: Icon(Icons.email),
                       keyboardType: TextInputType.emailAddress,
                     ),
                     textfield(
-                      hintText: 'Password',
+                      hintText: 'Password',icon: Icon(Icons.lock),
                       keyboardType: TextInputType.visiblePassword,
                     ),
                     SizedBox(
@@ -95,7 +97,8 @@ class login_view extends StatelessWidget {
                           children: [
                             InkWell(
                               onTap: () {
-                                Get.offAllNamed(Routes.HomeView);
+                               // Get.offAllNamed(Routes.HomeView);
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => HomeView()));
                               },
                               child: Container(
                                 margin: EdgeInsets.all(5),
@@ -120,7 +123,7 @@ class login_view extends StatelessWidget {
                                 child: Text(
                                   'Login',
                                   style: TextStyle(
-                                    color: Colors.white,fontSize: 20
+                                    color: Colors.white,fontSize: 25
                                   ),
                                 ),
                               ),
@@ -139,7 +142,7 @@ class login_view extends StatelessWidget {
                                   TextSpan(
                                     text: 'Forgot Password?',
                                     style: TextStyle(
-                                      decorationColor: Colors.yellow,
+                                      decorationColor: Color(0xffFFD704),
                                       fontSize:15
                                     ),
                                     recognizer: TapGestureRecognizer()
@@ -149,18 +152,65 @@ class login_view extends StatelessWidget {
                             textAlign: TextAlign.center,
                           ),
                         ),
-                        button(
-                            title: 'Continue with Facebook',
-                            icondata: FontAwesomeIcons.facebook,
-                            iconcolor: Color(0xff3121E5),
-                            callback: () {}),
-                        button(
-                          title: 'Sign in With Google',
-                          iconcolor: Color(0xffFF0606),
-                          icondata: FontAwesomeIcons.google,
-                        )
                       ],
                     ).paddingOnly(left: 15, right: 15),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                  color: Colors.black,
+                                  blurRadius: 25.0,
+                                  offset: Offset(0.0, 0.75))
+                            ],
+                            borderRadius: BorderRadius.circular(
+                              5,
+                            ),
+                          ),
+                          child: IconButton(onPressed: () {
+
+                          }, icon: Image.asset('assets/images/google.png',width: 20,height: 20,)),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                  color: Colors.black,
+                                  blurRadius: 25.0,
+                                  offset: Offset(0.0, 0.75))
+                            ],
+                            borderRadius: BorderRadius.circular(
+                              5,
+                            ),
+                          ),
+                          child: IconButton(onPressed: () {
+
+                          }, icon: Image.asset('assets/images/facebook.png',width: 20,height: 20,)),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            boxShadow: <BoxShadow>[
+                              BoxShadow(
+                                  color: Colors.black,
+                                  blurRadius: 15.0,
+                                  offset: Offset(0.0, 0.75))
+                            ],
+                            borderRadius: BorderRadius.circular(
+                              5,
+                            ),
+                          ),
+                          child: IconButton(onPressed: () {
+
+                          }, icon: Image.asset('assets/images/apple.png',width: 20,height: 20,)),
+                        ),
+                      ],
+                    ),
+
                     SizedBox(
                       height: Get.height * 0.03,
                     ),
@@ -179,14 +229,12 @@ class login_view extends StatelessWidget {
                                 text: 'Sign Up',
                                 style: TextStyle(
                                   decoration: TextDecoration.underline,
-                                  decorationColor: Colors.yellow,
+                                  decorationColor: Color(0xffFFD704),
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-
-                                     Get.offAllNamed(Routes.SIGNUP_VIEW);
-
-
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) =>SignupView()));
+                                    // Get.offAllNamed(Routes.SIGNUP_VIEW);
                                   },
                               ),
                             ]),
@@ -211,7 +259,7 @@ Widget textfield({
   TextEditingController? controller,
   TextInputType? keyboardType,
   bool? showPassword,
-  IconData? iconData,
+  Icon? icon,
   int? keyLength,
 }) {
   return Container(
@@ -222,10 +270,11 @@ Widget textfield({
           child: TextFormField(
             keyboardType: keyboardType,
             style: TextStyle(
-              color: Colors.white,
+              color: Colors.white,fontSize: 20
             ),
             maxLength: keyLength,
             cursorColor: Colors.white,
+
             decoration: InputDecoration(
               enabledBorder: UnderlineInputBorder(
                 borderSide: BorderSide(
@@ -241,7 +290,7 @@ Widget textfield({
               counter: Offstage(),
               hintText: '${hintText}',
               hintStyle: TextStyle(
-                color: Colors.white,
+                color: Colors.white,fontSize: 20
               ),
               contentPadding: EdgeInsets.symmetric(
                 horizontal: 0,

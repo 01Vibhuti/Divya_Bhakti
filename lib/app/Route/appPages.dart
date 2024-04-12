@@ -15,15 +15,15 @@ class appPages {
   static final route = [
     GetPage(
       name: Routes.SPLASHSCREEN,
-      page: () => Splash_Screen(),
+      page: () => SplashScreen(),
     ),
     GetPage(
       name: Routes.STARTING_VIEW,
-      page: () => starting_view(),
+      page: () => StartingView(),
     ),
     GetPage(
       name: Routes.SIGNUP_VIEW,
-      page: () => signup_view(),
+      page: () => SignupView(),
     ),
     // GetPage(
     //   name: Routes.SIGNUP_VIEW,
@@ -31,7 +31,7 @@ class appPages {
     // ),
     GetPage(
       name: Routes.LOGIN_VIEW,
-      page: () => login_view(),
+      page: () => LoginView(),
     ),
     GetPage(
       name: Routes.HomeView,

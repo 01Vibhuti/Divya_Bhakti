@@ -43,6 +43,7 @@ dependencies:
 
   #for page turn animation
   page_flip: ^0.1.0
+  curved_labeled_navigation_bar: ^2.0.2
 
   
 

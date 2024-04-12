@@ -30,11 +30,11 @@ class Divya_Bhakti extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
 
-      home: Splash_Screen(),
-      getPages: appPages.route,
-      initialRoute: Routes.JapaView,
+      home: SplashScreen(),
+      //getPages: appPages.route,
+      //initialRoute: Routes.JapaView,
       defaultTransition: Transition.rightToLeftWithFade,
-      transitionDuration:Duration(seconds: 1),
+      //transitionDuration:Duration(seconds: 2),
     );
   }
 }

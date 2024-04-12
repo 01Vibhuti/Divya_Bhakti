@@ -1,8 +1,12 @@
+import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
+import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 
 import '../modules/global/customBottomNavigationBar.dart';
+import '../modules/home/view/HomeView.dart';
+import '../modules/search_bar/search_bar.dart';
 
 // class customRoute{
 //
@@ -65,7 +69,8 @@ class _JaapListState extends State<JaapList> {
               fit: BoxFit.fill),
         ),
         child: Scaffold(
-          bottomNavigationBar: CustomBottomNavigationBar(context),
+
+          //CustomBottomNavigationBar(context),
           backgroundColor: Colors.transparent,
           appBar: AppBar(
             title: const Text('Search', style: TextStyle(color: Color(0xffFFD704),fontSize: 25),),centerTitle: true,
