@@ -75,7 +75,7 @@ class _JaapListState extends State<JaapList> {
           appBar: AppBar(
             title: const Text('Search', style: TextStyle(color: Color(0xffFFD704),fontSize: 25),),centerTitle: true,
             backgroundColor: const Color.fromRGBO(251, 14, 2, 1),
-            leading: Icon(Icons.arrow_back_rounded,color: Color(0xffFFD704),),
+            leading: IconButton(onPressed: () { Navigator.pop(context); }, icon: Icon(Icons.arrow_back_rounded,color: Color(0xffFFD704))),
           ),
           body: Opacity(
             opacity: 0.8,

@@ -2,6 +2,7 @@ import 'package:curved_labeled_navigation_bar/curved_navigation_bar.dart';
 import 'package:curved_labeled_navigation_bar/curved_navigation_bar_item.dart';
 import 'package:divya_bhakti/app/Route/appRoute.dart';
 import 'package:divya_bhakti/app/modules/Naam%20Jap/view/japa_view.dart';
+//import 'package:divya_bhakti/app/modules/drawer/drawer.dart';
 import 'package:divya_bhakti/app/modules/global/appcolor.dart';
 import 'package:divya_bhakti/app/modules/global/customBottomNavigationBar.dart';
 import 'package:divya_bhakti/app/modules/global/global_button.dart';
@@ -13,6 +14,7 @@ import 'package:get/get_rx/src/rx_typedefs/rx_typedefs.dart';
 import 'package:intl/intl.dart';
 
 import '../../../Route/customRoute.dart';
+import '../../drawer/maindra.dart';
 import '../../search_bar/search_bar.dart';
 
 class HomeView extends StatelessWidget {
@@ -34,6 +36,10 @@ class HomeView extends StatelessWidget {
               fit: BoxFit.fill),
         ),
         child: Scaffold(
+          appBar: AppBar(
+              title: Text('Divya Bhakti',style: TextStyle(color: appcolor.yellowColor,fontSize: 30),),
+              backgroundColor: appcolor.redbutton,elevation: 20,centerTitle: true,),
+          drawer: MainDrawer() ,
           bottomNavigationBar: //CustomBottomNavigationBar(context),
           CurvedNavigationBar(
              backgroundColor: Color(0xffFFD704),
@@ -58,7 +64,6 @@ class HomeView extends StatelessWidget {
                     Navigator.push(context, MaterialPageRoute(builder: (context) =>  SearchIcon()));
                   }, icon: Icon(Icons.search),
                   color: Color(0xffFFD704),
-
                 ),
               ),
 
